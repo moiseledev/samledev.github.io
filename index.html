@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" style="border-radius: 50%;">
+    <title>sam le dev</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo" style="cursor: pointer;" href="index.html">
+                <img src="images/logo.png" alt="Logo Portfolio" class="logo-img">
+                <span class="logo-text">SAM le DEV</span>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active cta-button">Accueil</a></li>
+                    <li><a href="#apropos" class="cta-button">À Propos</a></li>
+                    <li><a href="#competences" class="cta-button">Compétences</a></li>
+                    <!-- <li><a href="projets.html" class="cta-button">Projets</a></li> -->
+                    <li><a href="#contact" class="cta-button">Contact</a></li>
+                </ul>
+                <!-- <div class="auth-container">
+                    <div class="profile-circle" onclick="toggleAuthMenu()">
+                        <img src="images/default-avatar.webp" alt="Profile" id="profile-image" class="profile-image">
+                        <div class="auth-menu">
+                            <div class="auth-menu-item" onclick="openModal('login')">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Connexion</span>
+                            </div>
+                            <div class="auth-menu-item" onclick="openModal('register')">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Inscription</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1 data-translate="titre">Bienvenue sur mon Portfolio</h1>
+            <p data-translate="sousTitre">Développeur Web, Mobile & Robotique</p>
+            <a href="#contact" class="cta-button" data-translate="ctaButton">Me Contacter</a>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="apropos">
+        <h2>À Propos de Moi</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p style="color: #4f46e5; text-align: center; font-weight: 200;">
+                    Je suis un étudiant passionné en informatique,<br> 
+                    spécialisé dans le développement web, mobile et la robotique. <br> 
+                    Mon objectif est de créer des solutions innovantes qui combinent ces <br>
+                    différentes technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences">
+        <h2>Mes Compétences</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Développement Web</h3>
+                <ul>
+                    <li>HTML5 / CSS3</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Développement Mobile</h3>
+                <ul>
+                    <li>React Native</li>
+                    <li>Flutter</li>
+                    <li>Android Studio</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Robotique</h3>
+                <ul>
+                    <li>Arduino</li>
+                    <li>Raspberry Pi</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Me Contacter</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>samuellefaure@yandex.com</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Téléphone</h3>
+                    <p>+228 93112060</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localisation</h3>
+                    <p>Kara, Togo</p>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom complet <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet <span class="required">*</span></label>
+                    <div class="input-group">
+                        <i class="fas fa-tag"></i>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <div class="input-group">
+                        <i class="fas fa-comment-alt"></i>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="char-count">0 / 500 caractères</div>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Envoyer</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal de Connexion -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connexion</h2>
+                <span class="close" onclick="closeModal('login')"></span>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label><br>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label><br>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Se souvenir de moi
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">Se connecter</button>
+                <div class="auth-links">
+                    <a href="#" onclick="openModal('register')">Créer un compte</a>
+                    <a href="#" onclick="openModal('reset')">Mot de passe oublié ?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal d'Inscription -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Inscription</h2>
+                <span class="close" onclick="closeModal('register')"></span>
+            </div>
+            <form id="registerForm" class="auth-form" action="auth/register.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="registerName">Nom complet</label><br>
+                    <input type="text" id="registerName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label><br>
+                    <input type="email" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Mot de passe</label>
+                    <div class="password-input">
+                        <input type="password" id="registerPassword" name="password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmer le mot de passe</label>
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" name="confirm_password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profilePhoto">Photo de profil</label>
+                    <div class="profile-upload">
+                        <img id="profilePreview" src="images/default-avatar.webp" alt="Preview">
+                        <div class="upload-controls">
+                            <input type="file" id="profilePhoto" name="profile_photo" accept="image/*" class="file-input">
+                            <button type="button" class="upload-btn">
+                                <i class="fas fa-camera"></i>
+                                Choisir une photo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span class="checkmark"></span>
+                        J'accepte les conditions d'utilisation
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">S'inscrire</button>
+                <div class="auth-links">
+                    <a href="#" onclick="openModal('login')">Déjà inscrit ? Se connecter</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 sam le dev. Tous droits réservés.</p>
+    </footer>
+
+    <!-- <script src="js/translations.js"></script> -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

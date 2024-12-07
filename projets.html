@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de projets de développement web, mobile et robotique. Découvrez mes réalisations en programmation et développement logiciel.">
+    <meta name="keywords" content="portfolio, développeur, web, mobile, robotique, projets, développement, programmation">
+    <meta name="author" content="Samuel Nzali">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Projets - Portfolio de Samuel Nzali">
+    <meta property="og:description" content="Découvrez mes projets de développement web, mobile et robotique.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://samledev.com/projets">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://samledev.com/projets">
+    <title>Projets - Portfolio de Samuel Nzali</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Navigation principale">
+            <div class="logo" role="img" aria-label="Logo du site">
+                <img src="images/logo.png" alt="Logo Portfolio" class="logo-img">
+                <span class="logo-text">SAM le DEV</span>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="cta-button">Accueil</a></li>
+                    <li><a href="#apropos" class="cta-button">À Propos</a></li>
+                    <li><a href="#competences" class="cta-button">Compétences</a></li>
+                    <li><a href="projets.html" class="active cta-button">Projets</a></li>
+                    <li><a href="#contact" class="cta-button">Contact</a></li>
+                </ul>
+                <!-- <div class="auth-container">
+                    <div class="profile-circle" onclick="toggleAuthMenu()">
+                        <img src="images/default-avatar.webp" alt="Profile" id="profile-image" class="profile-image">
+                        <div class="auth-menu">
+                            <div class="auth-menu-item" onclick="openModal('login')">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Connexion</span>
+                            </div>
+                            <div class="auth-menu-item" onclick="openModal('register')">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Inscription</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Projets Section -->
+    <section class="projects-section hero1">
+        <div class="container hero-content1">
+            <h1 class="section-title">Mes Projets</h1>
+            
+            <!-- Filtres -->
+            <div class="filter-container" role="group" aria-label="Filtres des projets">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">Tous</button>
+                <button class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+                <button class="filter-btn" data-filter="mobile" aria-pressed="false">Mobile</button>
+                <button class="filter-btn" data-filter="desktop" aria-pressed="false">Desktop</button>
+            </div>
+
+            <!-- Barre de recherche -->
+            <div class="search-container">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="search" id="project-search" 
+                        aria-label="Rechercher des projets"
+                        placeholder="Rechercher des projets..."
+                        role="searchbox">
+                </div>
+            </div>
+
+            <!-- Grille des projets -->
+            <div class="projects-grid" role="list" aria-label="Liste des projets">
+                <!-- Les projets seront ajoutés dynamiquement via JavaScript -->
+            </div>
+
+            <!-- Template pour un projet -->
+            <template id="project-template">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="" alt="" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link github"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title"></h3>
+                        <p class="project-description"></p>
+                        <div class="project-tags"></div>
+                        <div class="project-footer">
+                            <span class="project-date"></span>
+                            <button class="project-details-btn">Plus de détails</button>
+                        </div>
+                    </div>
+                </article>
+            </template>
+        </div>
+    </section>
+
+    <!-- Modal de détails du projet -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content" role="dialog" aria-labelledby="projectTitle">
+            <div class="modal-header">
+                <h2 id="projectTitle"></h2>
+                <span class="close" onclick="closeProjectModal()"></span>
+            </div>
+            <div class="modal-body">
+                <div class="project-gallery">
+                    <!-- Les images seront ajoutées dynamiquement -->
+                </div>
+                <div class="project-info">
+                    <div class="info-section">
+                        <h3>Description</h3>
+                        <p class="project-full-description"></p>
+                    </div>
+                    <div class="info-section">
+                        <h3>Technologies utilisées</h3>
+                        <div class="project-tech-stack"></div>
+                    </div>
+                    <div class="info-section">
+                        <h3>Fonctionnalités clés</h3>
+                        <ul class="project-features"></ul>
+                    </div>
+                    <div class="info-section">
+                        <h3>Liens</h3>
+                        <div class="project-links">
+                            <a href="#" class="btn primary-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Voir le projet
+                            </a>
+                            <a href="#" class="btn secondary-btn" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Connexion -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content" role="dialog" aria-labelledby="loginTitle">
+            <div class="modal-header">
+                <h2 id="loginTitle">Connexion</h2>
+                <button class="close-btn" aria-label="Fermer">×</button>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label><br>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label><br>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('loginPassword')"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Se souvenir de moi
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">Se connecter</button>
+                <div class="auth-links">
+                    <a href="#" onclick="openModal('register')">Créer un compte</a>
+                    <a href="#" onclick="openModal('reset')">Mot de passe oublié ?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal d'Inscription -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content" role="dialog" aria-labelledby="registerTitle">
+            <div class="modal-header">
+                <h2 id="registerTitle">Inscription</h2>
+                <button class="close-btn" aria-label="Fermer">×</button>
+            </div>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">Nom complet</label><br>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label><br>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Mot de passe</label>
+                    <div class="password-input">
+                        <input type="password" id="registerPassword" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmer le mot de passe</label>
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profilePhoto">Photo de profil</label>
+                    <div class="profile-upload">
+                        <img id="profilePreview" src="images/default-avatar.webp" alt="Preview" loading="lazy">
+                        <div class="upload-controls">
+                            <input type="file" id="profilePhoto" accept="image/*" class="file-input">
+                            <button type="button" class="upload-btn">
+                                <i class="fas fa-camera"></i>
+                                Choisir une photo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms" required>
+                        <span class="checkmark"></span>
+                        J'accepte les conditions d'utilisation
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">S'inscrire</button>
+                <div class="auth-links">
+                    <a href="#" onclick="openModal('login')">Déjà inscrit ? Se connecter</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <!-- <script src="js/translations.js"></script> -->
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

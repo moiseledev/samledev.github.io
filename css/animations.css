@@ -1,0 +1,144 @@
+/* Notifications */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+/* Animations pour les sections */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation du logo */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Animation des compétences */
+.skill-category {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: skillFadeIn 0.6s ease forwards;
+}
+
+@keyframes skillFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de hover sur les liens */
+.nav-links li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::before {
+    transform: translateX(0);
+}
+
+/* Animation du bouton CTA */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.6s ease;
+}
+
+.cta-button:hover::before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+/* Animation des cartes de projet */
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+/* Animation du formulaire */
+#contact-form input,
+#contact-form textarea {
+    transition: all 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    transform: translateY(-2px);
+}
+
+/* Loading spinner pour le formulaire */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
